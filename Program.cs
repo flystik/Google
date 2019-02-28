@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using HashCode2019.Helpers;
 using HashCode2019.Model;
 
 namespace HashCode2019
@@ -13,6 +14,7 @@ namespace HashCode2019
         static void Main(string[] args)
         {
            ReadInputData();  
+           SequenceHepler.Proccess(_data);
         }
 
         static void ReadInputData()

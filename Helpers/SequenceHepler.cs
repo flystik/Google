@@ -19,17 +19,17 @@
                 var nextItem = data.PhotoInfo[i + 1];
                 var currentList = currentItem.Tags.ToList();
                 var comparationValue = Compare(currentList, nextItem.Tags.ToList()).InterestFactor;
-                for (var j = i + 1; j < data.PhotoInfo.Count; j++)
+                for (var j = i + 2; j < data.PhotoInfo.Count; j++)
                 {
                     var newComparationValue = Compare(currentList, data.PhotoInfo[j].Tags.ToList()).InterestFactor;
                     if (newComparationValue > comparationValue)
                     {
-                        Console.WriteLine(data.PhotoInfo[i + 1] + " <=> " + data.PhotoInfo[j]);
+                        Console.WriteLine(data.PhotoInfo[i + 1].Id + " <=> " + data.PhotoInfo[j].Id);
 
                         data.PhotoInfo[i + 1] = data.PhotoInfo[j];
                         data.PhotoInfo[j] = nextItem;
 
-                        Console.WriteLine("new: " + data.PhotoInfo[i + 1] + " <=> " + data.PhotoInfo[j]);
+                        Console.WriteLine("new: " + data.PhotoInfo[i + 1].Id + " <=> " + data.PhotoInfo[j].Id);
                     }
                 }
             }
