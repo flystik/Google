@@ -32,9 +32,9 @@
             return seq1.Intersect(seq2).ToList();
         }
 
-        //private static List<string> Union(List<string> seq1, List<string> seq2)
-        //{
-        //    return seq1.Union(seq2).ToList();
-        //}
+        public static List<string> Union(List<string> seq1, List<string> seq2)
+        {
+            return seq1.Union(seq2).ToList();
+        }
     }
 }
