@@ -1,31 +1,38 @@
 ﻿namespace HashCode2019.Helpers
 {
+    using HashCode2019.Model;
     using System.Collections.Generic;
+    using System.Linq;
 
     public class SequenceHepler
     {
         public SequenceHepler() { }
 
-        private static List<string> Except()
+        public static SequenceResult Compare(List<string> seq1, List<string> seq2)
         {
-            var result = new List<string>();
+            var result = new SequenceResult();
+            if (seq1 != null && seq2 != null)
+            {
+                //result.CommonTags =
+
+            }
 
             return result;
         }
 
-        private static List<string> Intersect()
+        private static List<string> Except(List<string> seq1, List<string> seq2)
         {
-            var result = new List<string>();
-
-            return result;
+            return seq1.Except(seq2).ToList();
         }
 
-        private static List<string> Union()
+        private static List<string> Intersect(List<string> seq1, List<string> seq2)
         {
-            var result = new List<string>();
-
-            return result;
+            return seq1.Intersect(seq2).ToList();
         }
 
+        private static List<string> Union(List<string> seq1, List<string> seq2)
+        {
+            return seq1.Union(seq2).ToList();
+        }
     }
 }
