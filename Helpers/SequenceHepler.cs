@@ -13,8 +13,9 @@
             var result = new SequenceResult();
             if (seq1 != null && seq2 != null)
             {
-                //result.CommonTags =
-
+                result.CommonTags = Intersect(seq1, seq2).Count;
+                result.FirstSequenceIntersect = Except(seq1, seq2).Count;
+                result.SecondSequenceIntersect = Except(seq2, seq1).Count;
             }
 
             return result;
@@ -30,9 +31,9 @@
             return seq1.Intersect(seq2).ToList();
         }
 
-        private static List<string> Union(List<string> seq1, List<string> seq2)
-        {
-            return seq1.Union(seq2).ToList();
-        }
+        //private static List<string> Union(List<string> seq1, List<string> seq2)
+        //{
+        //    return seq1.Union(seq2).ToList();
+        //}
     }
 }
