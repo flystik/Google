@@ -8,14 +8,14 @@ namespace HashCode2019
 {
     class Program
     {
-        private InputData _data;
+        private static InputData _data;
 
         static void Main(string[] args)
         {
-            
+           ReadInputData();  
         }
 
-        void ReadInputData()
+        static void ReadInputData()
         {
             var lines = File.ReadLines("input.txt").ToList();
             _data = new InputData();
