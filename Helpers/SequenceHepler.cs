@@ -1,13 +1,14 @@
 ﻿namespace HashCode2019.Helpers
 {
     using HashCode2019.Model;
+    using System;
     using System.Collections.Generic;
     using System.Linq;
 
     public class SequenceHepler
     {
         public SequenceHepler() { }
-
+   
         public static SequenceResult Compare(List<string> seq1, List<string> seq2)
         {
             var result = new SequenceResult();
@@ -16,6 +17,7 @@
                 result.CommonTags = Intersect(seq1, seq2).Count;
                 result.FirstSequenceIntersect = Except(seq1, seq2).Count;
                 result.SecondSequenceIntersect = Except(seq2, seq1).Count;
+                result.InterestFactor = (new int[3] { result.CommonTags, result.FirstSequenceIntersect, result.SecondSequenceIntersect }).Min();
             }
 
             return result;
